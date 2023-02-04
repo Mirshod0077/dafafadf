@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            css asoslari
+        </title>
+        <style>
+            .container{
+                padding: 30px;
+            }
+
+            /* checkbox uchun container */
+            .form-control{
+                display: block;
+                position: relative;
+                padding-left: 36px;
+                margin-bottom: 10px;
+                cursor: pointer;
+                font-size: 24px;
+            }
+            /* Brauzerning checkboxni yo'qotish  */
+            .form-control input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+            /* Maxsus checkbox style berish  */
+            .custom-checkbox{
+               position: absolute;
+               top: 0;
+               left: 0;
+               height: 24px;
+               width: 24px;
+               background-color: #ddd; 
+            }
+            /* Sichqoncha olib borganda orqa fon rangini o'zgarishi */
+            .form-control:hover input ~ .custom-checkbox{
+                background-color: #ccc;
+            }
+            /* checkbox tanlanganda, uning orqa fon rangini o'zgartirish  */
+            .form-control input:checked ~ .custom-checkbox{
+                background-color: #2d846e;
+            }
+            /* Checkbox tanlanganligi bildiruvchi belgi yaratish */
+            .custom-checkbox::after {
+                left: 8px;
+                top: 4px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            /* Tanlangan payti belgini ko'rsatish */
+            .form-control input:checked ~ .custom-checkbox:after{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Style berilgan checkbox</h1>
+           <label class="form-control">checkbox 1
+             <input type="checkbox" name="checkbox" value="checkbox" checked>
+             <span class="custom-checkbox"></span>
+           </label>
+           <label class="form-control">checkbox 2
+             <input type="checkbox" name="checkbox" value="checkbox">
+             <span class="custom-checkbox"></span>
+          </label>
+          <label class="form-control">checkbox 3
+             <input type="checkbox" name="checkbox" value="checkbox">
+             <span class="custom-checkbox"></span>
+          </label>
+        </div>
+        
+    </body>
+</html>
